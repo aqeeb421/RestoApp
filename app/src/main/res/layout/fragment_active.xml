@@ -1,14 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment.ActiveFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Active Subscriptions"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_active"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <com.ramijemli.percentagechartview.PercentageChartView
+            android:id="@+id/view_id"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            app:pcv_animDuration="800"
+            app:pcv_animInterpolator="fast_out_slow_in"
+            app:pcv_backgroundBarColor="#808080"
+            app:pcv_backgroundBarThickness="@dimen/tv_body2"
+            app:pcv_mode="ring"
+            app:pcv_textStyle="bold|italic"
+            app:pcv_orientation="counter_clockwise"
+            app:pcv_progress="90"
+            app:pcv_progressBarThickness="@dimen/tv_body2"
+            app:pcv_progressColor="@color/primaryColor"
+            app:pcv_startAngle="0"
+            app:pcv_textColor="@color/black"
+            app:pcv_textSize="@dimen/tv_body" />
+    </LinearLayout>
 
 </FrameLayout>

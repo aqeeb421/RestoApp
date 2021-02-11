@@ -1,4 +1,4 @@
-package com.resto.app.activity;
+package com.resto.app.activity_manager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.resto.app.R;
+import com.resto.app.activity.MainActivity;
 
 public class ManagerLoginActivity extends AppCompatActivity {
 

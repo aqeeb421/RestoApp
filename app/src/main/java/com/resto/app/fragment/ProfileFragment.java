@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import com.resto.app.R;
 import com.resto.app.activity.MainActivity;
-import com.resto.app.common.MessageModel;
+import com.resto.app.utils.MessageModel;
 import com.resto.app.model.SignUpModel;
 import com.resto.app.model.UpdateModel;
 import com.resto.app.network.RetrofitClient;

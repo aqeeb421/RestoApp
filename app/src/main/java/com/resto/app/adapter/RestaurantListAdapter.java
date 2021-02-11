@@ -13,12 +13,13 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.resto.app.R;
 import com.resto.app.activity.RestautantActivity;
-import com.resto.app.fragment.HomeFragment;
 import com.resto.app.model.RestaurantListModel;
+import com.resto.app.utils.RestaurantDiffCallback;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -37,6 +38,16 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
         this.restaurantListModel = restaurantListModel;
         restaurantListModelFull = new ArrayList<>(restaurantListModel);
     }
+
+    public void updateRestaurantListItems(List<RestaurantListModel> employees) {
+        final RestaurantDiffCallback diffCallback = new RestaurantDiffCallback(restaurantListModel, employees);
+        final DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(diffCallback);
+
+        this.restaurantListModel.clear();
+        this.restaurantListModel.addAll(employees);
+        diffResult.dispatchUpdatesTo(this);
+    }
+
 
     @NonNull
     @Override
@@ -61,10 +72,16 @@ public class RestaurantListAdapter extends RecyclerView.Adapter<RestaurantListAd
 
         holder.resto_item_image.setOnClickListener(v -> {
             Intent intent = new Intent(context, RestautantActivity.class);
-            intent.putExtra("resto_id", position);
+            intent.putExtra("resto_id", restaurantListModel.get(position).getId());
             context.startActivity(intent);
         });
 
+
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull RestaurantViewHolder holder, int position, @NonNull List<Object> payloads) {
+        super.onBindViewHolder(holder, position, payloads);
     }
 
     @Override

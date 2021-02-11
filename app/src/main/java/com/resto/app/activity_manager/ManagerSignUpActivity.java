@@ -1,4 +1,4 @@
-package com.resto.app.activity;
+package com.resto.app.activity_manager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.resto.app.R;
-import com.resto.app.activity_manager.MHomeActivity;
+import com.resto.app.activity.MainActivity;
 import com.resto.app.model.SignUpModel;
 import com.resto.app.network.RetrofitClient;
 

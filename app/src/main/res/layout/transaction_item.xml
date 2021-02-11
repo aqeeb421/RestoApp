@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="8dp"
+    android:layout_margin="4dp"
+    app:cardBackgroundColor="#EA989E"
+    app:cardCornerRadius="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/trans_resto_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Rest name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/tv_sub_heading" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Trans Id : "
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_body" />
+
+            <TextView
+                android:id="@+id/trans_resto_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:text="TRANS2021-1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_body" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Description : "
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_body" />
+
+            <TextView
+                android:id="@+id/trans_resto_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:maxLines="1"
+                android:text="3 Plates of Fried Chicken Momos"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_body" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Amount : "
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_body" />
+
+            <TextView
+                android:id="@+id/trans_resto_amt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:maxLines="1"
+                android:text="500.00"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_body" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Date : "
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_body" />
+
+            <TextView
+                android:id="@+id/trans_resto_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:maxLines="1"
+                android:text="2021-01-31T15:25:25.312507Z"
+                android:textColor="@color/black"
+                android:textSize="@dimen/tv_body1" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

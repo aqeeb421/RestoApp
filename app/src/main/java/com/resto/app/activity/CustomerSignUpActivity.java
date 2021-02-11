@@ -10,11 +10,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.resto.app.R;
-import com.resto.app.common.utils;
+import com.resto.app.utils.MyApplication;
 import com.resto.app.model.SignUpModel;
 import com.resto.app.network.RetrofitClient;
 
-import okhttp3.internal.Util;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -22,7 +21,6 @@ import retrofit2.Response;
 public class CustomerSignUpActivity extends AppCompatActivity {
 
     EditText edt_reg_userName, edt_reg_phoneNumber, edt_reg_email, edt_reg_password;
-    utils utils;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,7 +98,7 @@ public class CustomerSignUpActivity extends AppCompatActivity {
                     Toast.makeText(CustomerSignUpActivity.this, "Registered successfully...", Toast.LENGTH_SHORT).show();
 
                     assert response.body() != null;
-                    utils.setUserId(response.body().getId());
+                    MyApplication.setUserId(response.body().getId());
 
                     sharedPreferences = getSharedPreferences("SignUpDetails", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();

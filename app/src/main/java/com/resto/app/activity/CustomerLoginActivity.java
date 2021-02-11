@@ -8,14 +8,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.resto.app.R;
-import com.resto.app.common.utils;
+import com.resto.app.utils.MyApplication;
 import com.resto.app.model.SignInModel;
-import com.resto.app.model.SignUpModel;
-import com.resto.app.model.User;
 import com.resto.app.network.RetrofitClient;
 
 import okhttp3.MediaType;
@@ -28,6 +25,7 @@ public class CustomerLoginActivity extends AppCompatActivity {
 
     EditText edt_reg_email, edt_reg_password;
     private String TAG = "CustomerLoginActivity";
+    private MyApplication myApplication;
 
 
     @Override
@@ -110,6 +108,10 @@ public class CustomerLoginActivity extends AppCompatActivity {
                         editor.putString("name", response.body().getUser().getName());
                         editor.putString("email", response.body().getUser().getEmail());
                         editor.putString("phone", response.body().getUser().getPhone());
+
+                        editor.putString("token", response.body().getToken());
+                        editor.putString("userType", response.body().getUser().getUserType());
+
                         editor.apply();
 
                         Intent intent = new Intent(getApplicationContext(), HomeActivity.class);

@@ -3,7 +3,8 @@ package com.resto.app.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class RestaurantListModel implements Comparable, Cloneable {
+public class RestaurantListModel {
+
     @SerializedName("id")
     @Expose
     private Integer id;
@@ -34,6 +35,9 @@ public class RestaurantListModel implements Comparable, Cloneable {
     @SerializedName("close_time")
     @Expose
     private String closeTime;
+    @SerializedName("rest_code")
+    @Expose
+    private String restCode;
     @SerializedName("created_at")
     @Expose
     private String createdAt;
@@ -121,6 +125,14 @@ public class RestaurantListModel implements Comparable, Cloneable {
         this.closeTime = closeTime;
     }
 
+    public String getRestCode() {
+        return restCode;
+    }
+
+    public void setRestCode(String restCode) {
+        this.restCode = restCode;
+    }
+
     public String getCreatedAt() {
         return createdAt;
     }
@@ -136,29 +148,4 @@ public class RestaurantListModel implements Comparable, Cloneable {
     public void setUpdatedAt(String updatedAt) {
         this.updatedAt = updatedAt;
     }
-
-    @Override
-    public int compareTo(Object o) {
-        RestaurantListModel compare = (RestaurantListModel) o;
-
-        if (compare.id == this.id && compare.name.equals(this.name) && compare.updatedAt == (this.updatedAt)) {
-            return 0;
-        }
-        return 1;
-    }
-
-    @Override
-    public RestaurantListModel clone() {
-
-        RestaurantListModel clone;
-        try {
-            clone = (RestaurantListModel) super.clone();
-
-        } catch (CloneNotSupportedException e) {
-            throw new RuntimeException(e); //should not happen
-        }
-
-        return clone;
-    }
-
 }

@@ -1,4 +1,4 @@
-package com.resto.app.common;
+package com.resto.app.utils;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

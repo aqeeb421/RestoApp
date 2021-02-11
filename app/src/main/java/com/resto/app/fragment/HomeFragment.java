@@ -17,7 +17,6 @@ import android.widget.Toast;
 
 import com.resto.app.R;
 import com.resto.app.adapter.RestaurantListAdapter;
-import com.resto.app.common.MessageModel;
 import com.resto.app.model.RestaurantListModel;
 import com.resto.app.network.RetrofitClient;
 
@@ -66,7 +65,7 @@ public class HomeFragment extends Fragment {
                 try {
                     listAdapter.getFilter().filter(newText);
                 } catch (NullPointerException e) {
-                    Toast.makeText(getActivity(), "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Log.d(TAG, "onQueryTextChange: " + e.getMessage());
                 }
 
                 return true;
@@ -106,7 +105,10 @@ public class HomeFragment extends Fragment {
     }
 
     private void setRecyclerView(ArrayList<RestaurantListModel> restaurantListModel) {
-        recyclerView_resto.setLayoutManager(new LinearLayoutManager(getContext()));
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        linearLayoutManager.isAutoMeasureEnabled();
+        recyclerView_resto.setLayoutManager(linearLayoutManager);
+       // listAdapter.updateRestaurantListItems(restaurantListModel);
         listAdapter = new RestaurantListAdapter(getContext(), restaurantListModel);
         recyclerView_resto.setItemAnimator(new DefaultItemAnimator());
         recyclerView_resto.setAdapter(listAdapter);
